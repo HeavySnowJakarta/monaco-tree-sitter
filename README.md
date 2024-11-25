@@ -101,7 +101,7 @@ Create your Monaco Editor and apply the highlight on it:
 ```ts
 import Monaco = require("monaco-editor");
 import Parser = require("web-tree-sitter");
-import { Theme, Language } from "monaco-tree-sitter";
+import { Theme, Language, MonacoTreeSitter } from "monaco-tree-sitter";
 import treeSitterCpp from "./tree-sitter-cpp.wasm"; // Path to the language parser library WASM file
 
 Theme.load(require("monaco-tree-sitter/themes/tomorrow"));
@@ -120,6 +120,7 @@ Theme.load(require("monaco-tree-sitter/themes/tomorrow"));
     language: "cpp"
   });  
 
+  // MonacoTreeSitter is provided by the package `monaco-tree-sitter`
   const monacoTreeSitter = new MonacoTreeSitter(Monaco, editor, language);
 
   // You can change the language with monacoTreeSitter.changeLanguage()
